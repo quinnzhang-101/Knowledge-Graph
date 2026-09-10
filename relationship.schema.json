@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://book-scribe.local/schemas/v1/relationship.schema.json",
+  "title": "Relationship",
+  "description": "Edge between entity and event (or other typed refs). Different from causal: relationship is static, causal is temporal/dynamic.",
+  "type": "object",
+  "required": [
+    "relationship_id", "source", "relation", "target",
+    "source_book_id", "evidence_refs"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "relationship_id": {
+      "type": "string",
+      "pattern": "^relationship:book:[a-z0-9-]+:[a-z0-9-]+$"
+    },
+    "source": {
+      "type": "string",
+      "description": "Typically an entity_id (book-local).",
+      "pattern": "^entity:book:[a-z0-9-]+:[a-z]+:[a-z0-9-]+$"
+    },
+    "relation": {
+      "type": "string",
+      "minLength": 1,
+      "description": "v1: free-form relation verb (e.g. participated_in, served_under, allied_with). v1.1 may lock to controlled vocab."
+    },
+    "target": {
+      "type": "string",
+      "description": "Typically an event_id (book-local).",
+      "pattern": "^event:book:[a-z0-9-]+:[a-z0-9-]+$"
+    },
+    "source_book_id": {
+      "type": "string",
+      "pattern": "^book:[a-z0-9-]+$"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "evidence_ref.schema.json"}
+    }
+  }
+}

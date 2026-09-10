@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://book-scribe.local/schemas/v1/evidence_ref.schema.json",
+  "title": "Evidence Reference",
+  "description": "Reference to an evidence object. Object form (not bare string) allows future per-ref metadata.",
+  "type": "object",
+  "required": ["id"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^evidence:[a-z0-9-]+:[A-Za-z0-9-]+$"
+    }
+  }
+}

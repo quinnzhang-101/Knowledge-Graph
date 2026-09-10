@@ -1,0 +1,13 @@
+{
+  "evidence_id": "evidence:sunzi-bingfa:0001",
+  "source_book_id": "book:sunzi-bingfa",
+  "source_location": {
+    "chapter_id": "ch-002",
+    "char_start": 7848,
+    "char_end": 7947
+  },
+  "evidence_type": "textual",
+  "claim": "孙子开篇即断言战争是国家生死存亡的大事。",
+  "original_text": "兵者，国之大事，死生之地，存亡之道，不可不察也。”强调了军事学研究对于国家存亡、百姓生死的重大意义。而战争的胜负，在孙子看来，通过庙算是可以预知的。孙子将战前庙算的主要内容概括为“五事”、“七计”。",
+  "epistemic_status": "source_text"
+}

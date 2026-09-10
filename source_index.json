@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "book_id": "book:sunzi-bingfa",
+  "book_slug": "sunzi-bingfa",
+  "normalized_from": "D:\\Date\\English\\孙子兵法 (孙武  陈曦 译注) (Z-Library).epub",
+  "normalized_from_name": "孙子兵法 (孙武  陈曦 译注) (Z-Library).epub",
+  "normalized_at": "2026-09-10",
+  "total_chars": 181748,
+  "chapter_count": 14,
+  "chapters": [
+    {
+      "chapter_id": "ch-001",
+      "title": "前言",
+      "char_start": 0,
+      "char_end": 7705,
+      "is_notes": false,
+      "source_href": "text/part0002.html",
+      "idref": "id46"
+    },
+    {
+      "chapter_id": "ch-002",
+      "title": "计篇",
+      "char_start": 7707,
+      "char_end": 20535,
+      "is_notes": false,
+      "source_href": "text/part0004.html",
+      "idref": "id48"
+    },
+    {
+      "chapter_id": "ch-003",
+      "title": "作战篇",
+      "char_start": 20537,
+      "char_end": 32233,
+      "is_notes": false,
+      "source_href": "text/part0005.html",
+      "idref": "id49"
+    },
+    {
+      "chapter_id": "ch-004",
+      "title": "谋攻篇",
+      "char_start": 32235,
+      "char_end": 45699,
+      "is_notes": false,
+      "source_href": "text/part0006.html",
+      "idref": "id50"
+    },
+    {
+      "chapter_id": "ch-005",
+      "title": "形篇",
+      "char_start": 45701,
+      "char_end": 57980,
+      "is_notes": false,
+      "source_href": "text/part0007.html",
+      "idref": "id51"
+    },
+    {
+      "chapter_id": "ch-006",
+      "title": "势篇",
+      "char_start": 57982,
+      "char_end": 70351,
+      "is_notes": false,
+      "source_href": "text/part0008.html",
+      "idref": "id52"
+    },
+    {
+      "chapter_id": "ch-007",
+      "title": "虚实篇",
+      "char_start": 70353,
+      "char_end": 87596,
+      "is_notes": false,
+      "source_href": "text/part0009.html",
+      "idref": "id53"
+    },
+    {
+      "chapter_id": "ch-008",
+      "title": "军争篇",
+      "char_start": 87598,
+      "char_end": 103946,
+      "is_notes": false,
+      "source_href": "text/part0010.html",
+      "idref": "id54"
+    },
+    {
+      "chapter_id": "ch-009",
+      "title": "九变篇",
+      "char_start": 103948,
+      "char_end": 115337,
+      "is_notes": false,
+      "source_href": "text/part0011.html",
+      "idref": "id55"
+    },
+    {
+      "chapter_id": "ch-010",
+      "title": "行军篇",
+      "char_start": 115339,
+      "char_end": 130142,
+      "is_notes": false,
+      "source_href": "text/part0012.html",
+      "idref": "id56"
+    },
+    {
+      "chapter_id": "ch-011",
+      "title": "地形篇",
+      "char_start": 130144,
+      "char_end": 141022,
+      "is_notes": false,
+      "source_href": "text/part0013.html",
+      "idref": "id57"
+    },
+    {
+      "chapter_id": "ch-012",
+      "title": "九地篇",
+      "char_start": 141024,
+      "char_end": 161454,
+      "is_notes": false,
+      "source_href": "text/part0014.html",
+      "idref": "id58"
+    },
+    {
+      "chapter_id": "ch-013",
+      "title": "火攻篇",
+      "char_start": 161456,
+      "char_end": 169105,
+      "is_notes": false,
+      "source_href": "text/part0015.html",
+      "idref": "id59"
+    },
+    {
+      "chapter_id": "ch-014",
+      "title": "用间篇",
+      "char_start": 169107,
+      "char_end": 181748,
+      "is_notes": false,
+      "source_href": "text/part0016.html",
+      "idref": "id60"
+    }
+  ],
+  "skipped_items": [
+    {
+      "idref": "titlepage",
+      "href": "titlepage.xhtml",
+      "title": "Section 1",
+      "reason": "skippable_pattern"
+    },
+    {
+      "idref": "id44",
+      "href": "text/part0000.html",
+      "title": "书名页",
+      "reason": "image_only_or_too_short"
+    },
+    {
+      "idref": "id45",
+      "href": "text/part0001.html",
+      "title": "版权页",
+      "reason": "front_matter"
+    },
+    {
+      "idref": "id47",
+      "href": "text/part0003.html",
+      "title": "目录",
+      "reason": "front_matter"
+    }
+  ]
+}

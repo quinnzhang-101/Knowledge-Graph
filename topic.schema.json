@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://book-scribe.local/schemas/v1/topic.schema.json",
+  "title": "Topic",
+  "description": "Thematic tag. NOTE v1: topic has NO members field — topics are floating tags. topic_members is an open design question for v1.1.",
+  "type": "object",
+  "required": ["topic_id", "name", "source_book_id"],
+  "additionalProperties": false,
+  "properties": {
+    "topic_id": {
+      "type": "string",
+      "pattern": "^topic:[a-z0-9-]+$"
+    },
+    "name": {"type": "string", "minLength": 1},
+    "aliases": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "source_book_id": {
+      "type": "string",
+      "pattern": "^book:[a-z0-9-]+$"
+    }
+  }
+}

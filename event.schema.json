@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://book-scribe.local/schemas/v1/event.schema.json",
+  "title": "Event (Book-local)",
+  "description": "A discrete historical event as described in one book. ID is book-local to preserve authorial boundaries.",
+  "type": "object",
+  "required": [
+    "event_id", "event_type", "title", "time",
+    "participants", "description", "source_book_id", "evidence_refs"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "pattern": "^event:book:[a-z0-9-]+:[a-z0-9-]+$"
+    },
+    "event_type": {
+      "enum": ["political", "institutional", "military", "economic",
+               "social", "cultural", "personal", "religious", "other"]
+    },
+    "title": {"type": "string", "minLength": 1},
+    "time": {
+      "type": "object",
+      "required": ["value", "precision"],
+      "additionalProperties": false,
+      "properties": {
+        "value": {"type": "string", "minLength": 1},
+        "precision": {
+          "enum": ["year", "period", "relative", "approximate", "unknown"]
+        }
+      }
+    },
+    "location": {
+      "type": ["string", "null"]
+    },
+    "participants": {
+      "type": "array",
+      "description": "List of entity_id strings (book-local entity refs).",
+      "items": {
+        "type": "string",
+        "pattern": "^entity:book:[a-z0-9-]+:[a-z]+:[a-z0-9-]+$"
+      }
+    },
+    "description": {
+      "type": "object",
+      "required": ["claim", "epistemic_status"],
+      "additionalProperties": false,
+      "properties": {
+        "claim": {"type": "string", "minLength": 1},
+        "epistemic_status": {
+          "enum": ["source_fact", "author_claim", "model_extraction",
+                   "model_interpretation", "uncertain"]
+        }
+      }
+    },
+    "source_book_id": {
+      "type": "string",
+      "pattern": "^book:[a-z0-9-]+$"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "evidence_ref.schema.json"}
+    }
+  }
+}

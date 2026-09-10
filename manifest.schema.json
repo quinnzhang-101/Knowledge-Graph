@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://book-scribe.local/schemas/v1/manifest.schema.json",
+  "title": "Package Manifest",
+  "description": "Package-level metadata. Does NOT store content; only what/which-book/schema/builder/contents.",
+  "type": "object",
+  "required": [
+    "package_id", "package_type", "schema_version",
+    "source_book_id", "builder", "created_at", "contents"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "package_id": {
+      "type": "string",
+      "pattern": "^package:[a-z0-9-]+$"
+    },
+    "package_type": {
+      "enum": ["historical_knowledge_package"]
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+$"
+    },
+    "source_book_id": {
+      "type": "string",
+      "pattern": "^book:[a-z0-9-]+$"
+    },
+    "builder": {
+      "type": "object",
+      "required": ["name", "version"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"enum": ["book-scribe"]},
+        "version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"}
+      }
+    },
+    "created_at": {"type": "string", "format": "date"},
+    "contents": {
+      "type": "object",
+      "required": [
+        "characters", "events", "causal_chains", "contexts",
+        "mirrors", "topics", "relationships", "evidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "characters": {"type": "integer", "minimum": 0},
+        "events": {"type": "integer", "minimum": 0},
+        "causal_chains": {"type": "integer", "minimum": 0},
+        "contexts": {"type": "integer", "minimum": 0},
+        "mirrors": {"type": "integer", "minimum": 0},
+        "topics": {"type": "integer", "minimum": 0},
+        "relationships": {"type": "integer", "minimum": 0},
+        "evidence": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

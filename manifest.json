@@ -1,0 +1,21 @@
+{
+  "package_id": "package:sunzi-bingfa",
+  "package_type": "historical_knowledge_package",
+  "schema_version": "1.0",
+  "source_book_id": "book:sunzi-bingfa",
+  "builder": {
+    "name": "book-scribe",
+    "version": "0.1.0"
+  },
+  "created_at": "2026-09-10",
+  "contents": {
+    "characters": 1,
+    "events": 1,
+    "causal_chains": 0,
+    "contexts": 1,
+    "mirrors": 1,
+    "topics": 1,
+    "relationships": 1,
+    "evidence": 2
+  }
+}

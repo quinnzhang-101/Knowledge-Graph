@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://book-scribe.local/schemas/v1/evidence.schema.json",
+  "title": "Evidence",
+  "description": "Terminal anchor for fact traceability. Anchors to source_normalized.txt via char_start/char_end.",
+  "type": "object",
+  "required": [
+    "evidence_id", "source_book_id", "source_location",
+    "evidence_type", "claim", "original_text", "epistemic_status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "pattern": "^evidence:[a-z0-9-]+:[A-Za-z0-9-]+$"
+    },
+    "source_book_id": {
+      "type": "string",
+      "pattern": "^book:[a-z0-9-]+$"
+    },
+    "source_location": {
+      "type": "object",
+      "required": ["chapter_id", "char_start", "char_end"],
+      "additionalProperties": false,
+      "properties": {
+        "chapter_id": {
+          "type": "string",
+          "pattern": "^ch(-notes)?-\\d{3}$"
+        },
+        "char_start": {"type": "integer", "minimum": 0},
+        "char_end": {"type": "integer", "minimum": 0}
+      }
+    },
+    "evidence_type": {
+      "enum": ["textual", "contextual", "inferred", "other"]
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Scribe's structured summary of what this evidence supports."
+    },
+    "original_text": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Verbatim text excerpt from source_normalized.txt[char_start:char_end]."
+    },
+    "epistemic_status": {
+      "enum": ["source_text", "source_fact", "author_claim", "uncertain"]
+    }
+  }
+}

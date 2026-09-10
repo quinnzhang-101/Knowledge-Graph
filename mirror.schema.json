@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://book-scribe.local/schemas/v1/mirror.schema.json",
+  "title": "Mirror",
+  "description": "Scribe-built interpretation. Traces to other Package objects via basis_refs (NOT to evidence directly). Distinguished from Context by ref field structure.",
+  "type": "object",
+  "required": [
+    "mirror_id", "title", "content",
+    "epistemic_status", "basis_refs", "source_book_id"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "mirror_id": {
+      "type": "string",
+      "pattern": "^mirror:book:[a-z0-9-]+:[a-z0-9-]+$"
+    },
+    "title": {"type": "string", "minLength": 1},
+    "content": {"type": "string", "minLength": 1},
+    "epistemic_status": {
+      "enum": ["model_interpretation", "model_extraction", "uncertain"]
+    },
+    "basis_refs": {
+      "type": "array",
+      "minItems": 1,
+      "description": "References to Package objects (event_id, causal_id, etc.) this mirror is built upon.",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "source_book_id": {
+      "type": "string",
+      "pattern": "^book:[a-z0-9-]+$"
+    }
+  }
+}
